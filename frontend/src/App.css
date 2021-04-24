@@ -1,3 +1,10 @@
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+.webgl-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
 }
