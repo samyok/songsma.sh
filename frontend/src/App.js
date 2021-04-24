@@ -177,8 +177,6 @@ function App() {
         renderer.outputEncoding = THREE.sRGBEncoding;
         document.body.appendChild(renderer.domElement);
 
-        let cubes = [];
-
         const playingFieldGeo = new THREE.PlaneGeometry(4, 5000, 1);
         const fieldColor = new THREE.MeshBasicMaterial({
             color: "white",
@@ -186,6 +184,8 @@ function App() {
             opacity: 0.5,
             transparent: true,
         });
+
+        let cubes = [];
 
         const playingField = new THREE.Mesh(playingFieldGeo, fieldColor);
 
@@ -222,6 +222,7 @@ function App() {
         // lineLight.add(lineLightHelper);
 
         scene.fog = new THREE.Fog("black", 5, 15);
+        const loader = new GLTFLoader();
 
         function genCube(lineIndex, lineLayer, type, cutDirection) {
             function postProcessingCube(gltf) {
@@ -259,14 +260,22 @@ function App() {
                 }
             }
 
-            if (type === 0) {
-                const loader = new GLTFLoader();
-                loader.load("./redbox.glb", postProcessingCube);
-            }
-            if (type === 1) {
-                const loader = new GLTFLoader();
-                loader.load("./bluebox.glb", postProcessingCube);
-            }
+            if (type === 0) loader.load("./redbox.glb", postProcessingCube);
+
+            if (type === 1) loader.load("./bluebox.glb", postProcessingCube);
+        }
+
+        function genSaber({ x, y, z, file, rotX, rotY, rotZ }) {
+            loader.load(file, gltf => {
+                scene.add(gltf.scene);
+                gltf.scene.scale.set(0.42, 0.42, 0.42);
+                gltf.scene.position.x = x;
+                gltf.scene.position.y = y;
+                gltf.scene.position.z = z;
+                gltf.scene.rotation.x = rotX;
+                gltf.scene.rotation.y = rotY;
+                gltf.scene.rotation.z = rotZ;
+            });
         }
 
         function breakCube(lineIndex, lineLayer) {
@@ -293,7 +302,7 @@ function App() {
             stats.begin();
 
             for (let i = 0; i < cubes.length; i++) {
-                cubes[i].position.z += 0.08;
+                cubes[i].position.z += 0.04;
                 if (cubes[i].position.z > 7) {
                     scene.remove(cubes[i]);
                     cubes.splice(i, 1);
@@ -308,11 +317,12 @@ function App() {
             requestAnimationFrame(animate);
         };
 
-        // genCube(0, 0, 0, 4);
-        // genCube(1, 1, 1, 5);
-        // genCube(2, 2, 0, 6);
-        // genCube(3, 2, 1, 7);
-        // setTimeout(() => breakCube(3, 2), 3000);
+        genCube(0, 0, 0, 4);
+        genCube(1, 1, 1, 5);
+        genCube(2, 2, 0, 6);
+        genCube(3, 2, 1, 7);
+        genSaber({ x: 0, y: 0, z: 6, file: "./redsaber.glb", rotZ: Math.PI / 2, rotY: 0, rotX: 0 });
+        setTimeout(() => breakCube(3, 2), 3000);
 
         camera.position.z = 10;
         requestAnimationFrame(animate);
