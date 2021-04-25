@@ -1,0 +1,174 @@
+.webgl-main
+  position: fixed
+  top: 0
+  left: 0
+  z-index: -99
+
+h1, h2, h3, h4, h5
+  font-family: 'Righteous', cursive
+button
+  color: white
+  text-decoration: none
+  font-size: 17px
+  font-weight: bold
+  border: 2px solid white
+  padding: 15px 20px
+  margin: 10px
+  transition-duration: 0.2s
+  background-color: black
+  outline: none
+
+  &:hover
+    background-color: white
+    color: black
+    cursor: pointer
+
+.Nav
+  display: flex
+  align-items: center
+  background: rgba(0, 0, 0, 0.5)
+  padding: 30px 5%
+
+  img
+    height: 40px
+    margin-right: 20px
+    box-shadow: 0px 0px 100px #FFFFFF
+    border-radius: 50%
+
+  h1
+    text-shadow: 0px 0px 60px #FFFFFF
+
+  .filler
+    flex-grow: 1
+
+  .link a
+    color: white
+    text-decoration: none
+    font-size: 17px
+    font-weight: bold
+    border: 2px solid white
+    padding: 15px 20px
+    margin: 10px
+    transition-duration: 0.2s
+
+    &:hover
+      background-color: white
+      color: black
+
+.hero, .selectMode
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  min-height: 60vh
+
+  h2
+    font-size: 72px
+    margin: 20px
+
+  p
+    font-size: 30px
+
+  button
+    color: black
+    background-image: linear-gradient(to left, white, white)
+    outline: none
+    font-size: 20px
+    padding: 1rem 2rem
+    text-decoration: inherit
+    border: 10px solid
+    border-image-slice: 1
+    border-width: 5px
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d)
+    transition-duration: 500ms
+    font-weight: 900
+
+    &:hover
+      background-image: linear-gradient(to left, #743ad5, #d53a9d)
+      cursor: pointer
+      color: white
+
+.selectMode
+  .choice
+    width: 150px
+    transition-duration: 1s
+    text-align: center
+
+    p
+      font-size: 15px
+      transition-duration: 1s
+      text-shadow: 0px 0px 30px #FFFFFF
+
+    img
+      width: 100%
+
+    &:hover
+      width: 200px
+      cursor: pointer
+
+      p
+        font-size: 25px
+
+.listResults
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 20px 5%
+    display: flex
+    flex-wrap: wrap
+
+    li
+
+      display: flex
+      align-items: center
+      background-color: rgba(255,255,255,0.1)
+      margin: 10px
+      padding: 20px
+      flex-grow: 1
+      h3
+        font-size: 20px
+        margin: 0
+      button
+        margin-right: 5px
+        cursor: pointer
+  img
+    width: 150px
+    margin-right: 20px
+
+.score-container
+  width: 500px
+  height: 15px
+  position: fixed
+  bottom: 20px
+  left: 50%
+  transform: translateX(-50%)
+  background-color: rgba(255,0,0,0.2)
+  .score
+    height: 15px
+    background-color: white
+    transition-duration: 750ms
+
+.header, .search
+  margin: 10px 5%
+  font-size: 20px
+.search
+  display: flex
+  input
+    flex-grow: 1
+    padding: 10px
+    border: none
+    font-size: 20px
+    outline: none
+
+.selectMode
+  display: flex
+  flex-direction: row
+  .choice
+    margin: 20px
+
+.Footer
+  position: fixed
+  bottom: 10px
+  left: 50%
+  transform: translateX(-50%)
+  color: grey

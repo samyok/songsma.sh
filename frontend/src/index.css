@@ -3,16 +3,22 @@ body {
   margin: 0;
   font: normal 75% Arial, Helvetica, sans-serif;
   background: black;
+  color: white;
+  font-family: 'Ruda', sans-serif;
 }
-
+button, p {
+  font-family: 'Ruda', sans-serif;
+}
 canvas {
   display: block;
   vertical-align: bottom;
+  position: fixed;
+  top:0;
+  left:0;
 }
 
 /* ---- particles.js container ---- */
 #particles-js, #root {
-  position: absolute;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -24,4 +30,8 @@ canvas {
 }
 #particles-js {
   z-index: -100;
+  position: fixed;
+  top: 0;
+  left: 0;
+
 }

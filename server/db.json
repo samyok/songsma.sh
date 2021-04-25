@@ -1,0 +1,803 @@
+{
+  "a2c21a3a478f14422185f77cc8f9030f638fcf06": {
+    "_version": "2.0.0",
+    "_songName": "AIN'T NOTHIN' LIKE A FUNKY BEAT",
+    "_songSubName": "",
+    "_songAuthorName": "Hideki Naganuma",
+    "_levelAuthorName": "Rocket",
+    "_beatsPerMinute": 142,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 13.529999732971191,
+    "_previewDuration": 21.950000762939453,
+    "_songFilename": "song.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "TriangleEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Easy",
+            "_difficultyRank": 1,
+            "_beatmapFilename": "Easy.dat",
+            "_noteJumpMovementSpeed": 15,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Normal",
+            "_difficultyRank": 3,
+            "_beatmapFilename": "Normal.dat",
+            "_noteJumpMovementSpeed": 15,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 15,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 15,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "d110e413fb7fb462b692f1f17b835cf8b7280884": {
+    "_version": "2.0.0",
+    "_songName": "Uptown Funk",
+    "_songSubName": "",
+    "_songAuthorName": "Mark Ronson",
+    "_levelAuthorName": "BennyDaBeast",
+    "_beatsPerMinute": 115,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 12,
+    "_previewDuration": 10,
+    "_songFilename": "song.egg",
+    "_coverImageFilename": "cover.png",
+    "_environmentName": "TriangleEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "f24f1d16ca36b07b7af9681efff3987542fb29c0": {
+    "_version": "2.0.0",
+    "_songName": "Millionaire",
+    "_songSubName": "ft. Nelly | Alan Walker Remix",
+    "_songAuthorName": "Cash Cash & Digital Farm Animals",
+    "_levelAuthorName": "StyngMe & Skyler Wallace",
+    "_beatsPerMinute": 96,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 57,
+    "_previewDuration": 10,
+    "_songFilename": "Millionaire (ft. Nelly) Alan Walker Remix.egg",
+    "_coverImageFilename": "Millionaire.jpg",
+    "_environmentName": "BigMirrorEnvironment",
+    "_customData": {
+      "_contributors": [
+        {
+          "_role": "Normal, Hard, Expert, Expert+",
+          "_name": "StyngMe",
+          "_iconPath": ""
+        },
+        {
+          "_role": "Easy, Expert+",
+          "_name": "Skyler Wallace",
+          "_iconPath": ""
+        }
+      ],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Easy",
+            "_difficultyRank": 1,
+            "_beatmapFilename": "Easy.dat",
+            "_noteJumpMovementSpeed": 11,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Normal",
+            "_difficultyRank": 3,
+            "_beatmapFilename": "Normal.dat",
+            "_noteJumpMovementSpeed": 11,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 12,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 14,
+            "_noteJumpStartBeatOffset": -0.25,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "ExpertPlus",
+            "_difficultyRank": 9,
+            "_beatmapFilename": "ExpertPlus.dat",
+            "_noteJumpMovementSpeed": 14,
+            "_noteJumpStartBeatOffset": -0.25,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ce33b2ec98b0f9f48e6a0f5b5c6f6a6791d5270b": {
+    "_version": "2.0.0",
+    "_songName": "Kaizo Trap (Yazer) ScoreFix",
+    "_songSubName": "",
+    "_songAuthorName": "Leslie Wai",
+    "_levelAuthorName": "GreatYazer",
+    "_beatsPerMinute": 130,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.25,
+    "_previewStartTime": 72,
+    "_previewDuration": 15,
+    "_songFilename": "Song.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "TriangleEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Normal",
+            "_difficultyRank": 3,
+            "_beatmapFilename": "Normal.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "ExpertPlus",
+            "_difficultyRank": 9,
+            "_beatmapFilename": "ExpertPlus.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "d1a01de5b779523c390b594bd0f61ed57b0e41f8": {
+    "_version": "2.0.0",
+    "_songName": "The Other Side (The Greatest Showman)",
+    "_songSubName": "",
+    "_songAuthorName": "Hugh Jackman & Zac Efron",
+    "_levelAuthorName": "BennyDaBeast, Lit by Willums & Assistant",
+    "_beatsPerMinute": 154,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 12,
+    "_previewDuration": 10,
+    "_songFilename": "song.egg",
+    "_coverImageFilename": "cover.png",
+    "_environmentName": "BigMirrorEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "ExpertPlus",
+            "_difficultyRank": 9,
+            "_beatmapFilename": "ExpertPlus.dat",
+            "_noteJumpMovementSpeed": 11,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "e6215a700400aa64671d808560a6c8a28ebc44a6": {
+    "_version": "2.0.0",
+    "_songName": "Radioactive ",
+    "_songSubName": "",
+    "_songAuthorName": "Imagine Dragons",
+    "_levelAuthorName": "Cranberry",
+    "_beatsPerMinute": 137,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 76,
+    "_previewDuration": 10,
+    "_songFilename": "Radioactive.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "NiceEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 600,
+              "_editorOldOffset": 600,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "0e4b5e325760bdabb66caea4506c5463daf4b51f": {
+    "_version": "2.0.0",
+    "_songName": "You're Welcome",
+    "_songSubName": "",
+    "_songAuthorName": "Moana",
+    "_levelAuthorName": "Prime",
+    "_beatsPerMinute": 135,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 38,
+    "_previewDuration": 15,
+    "_songFilename": "You're Welcome.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "BigMirrorEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 222,
+              "_editorOldOffset": 222,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "77038e161dfe1bd990959bef9729917da4c64044": {
+    "_version": "2.0.0",
+    "_songName": "Sunset Jesus",
+    "_songSubName": "",
+    "_songAuthorName": "Avicii",
+    "_levelAuthorName": "CyanSnow",
+    "_beatsPerMinute": 105,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 149,
+    "_previewDuration": 10,
+    "_songFilename": "easter.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "BigMirrorEnvironment",
+    "_songTimeOffset": 0,
+    "_customData": {
+      "_contributors": [
+        {
+          "_role": "Mapper",
+          "_name": "CyanSnow",
+          "_iconPath": "cyan.png"
+        }
+      ]
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Easy",
+            "_difficultyRank": 1,
+            "_beatmapFilename": "EasyStandard.dat",
+            "_noteJumpMovementSpeed": 12,
+            "_noteJumpStartBeatOffset": 0
+          },
+          {
+            "_difficulty": "Normal",
+            "_difficultyRank": 3,
+            "_beatmapFilename": "NormalStandard.dat",
+            "_noteJumpMovementSpeed": 12,
+            "_noteJumpStartBeatOffset": 0
+          },
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "HardStandard.dat",
+            "_noteJumpMovementSpeed": 13,
+            "_noteJumpStartBeatOffset": 0
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "ExpertStandard.dat",
+            "_noteJumpMovementSpeed": 16,
+            "_noteJumpStartBeatOffset": 0.5
+          },
+          {
+            "_difficulty": "ExpertPlus",
+            "_difficultyRank": 9,
+            "_beatmapFilename": "ExpertPlusStandard.dat",
+            "_noteJumpMovementSpeed": 18,
+            "_noteJumpStartBeatOffset": 0.300000011920929
+          }
+        ]
+      },
+      {
+        "_beatmapCharacteristicName": "360Degree",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert360Degree.dat",
+            "_noteJumpMovementSpeed": 14,
+            "_noteJumpStartBeatOffset": -0.25
+          }
+        ]
+      }
+    ],
+    "_allDirectionsEnvironmentName": "GlassDesertEnvironment"
+  },
+  "d5e0ebff74ee79f517bbb580f3c55e389b09bfa0": {
+    "_version": "2.0.0",
+    "_songName": "The Bad Touch",
+    "_songSubName": "",
+    "_songAuthorName": "Bloodhound Gang [BT90]",
+    "_levelAuthorName": "Heisenberg & XypherOrion",
+    "_beatsPerMinute": 123,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 71.5,
+    "_previewDuration": 10,
+    "_songFilename": "TheBadTouch.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "DefaultEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 14,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "ExpertPlus",
+            "_difficultyRank": 9,
+            "_beatmapFilename": "ExpertPlus.dat",
+            "_noteJumpMovementSpeed": 16,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "431ffaa53a1e45ffab6c81a895e456f6aad1e038": {
+    "_version": "2.0.0",
+    "_songName": "Papercut",
+    "_songSubName": "",
+    "_songAuthorName": "Linkin Park",
+    "_levelAuthorName": "Heisenberg",
+    "_beatsPerMinute": 150.1699981689453,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 12,
+    "_previewDuration": 10,
+    "_songFilename": "song.egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "DefaultEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 12,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_colorLeft": {
+                "r": 1.5,
+                "g": 0,
+                "b": 0
+              },
+              "_colorRight": {
+                "r": 0,
+                "g": 0,
+                "b": 1.5
+              },
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 15,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_colorLeft": {
+                "r": 1.5,
+                "g": 0,
+                "b": 0
+              },
+              "_colorRight": {
+                "r": 0,
+                "g": 0,
+                "b": 1.5
+              },
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "ExpertPlus",
+            "_difficultyRank": 9,
+            "_beatmapFilename": "ExpertPlus.dat",
+            "_noteJumpMovementSpeed": 18,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 0,
+              "_editorOldOffset": 0,
+              "_colorLeft": {
+                "r": 1.5,
+                "g": 0,
+                "b": 0
+              },
+              "_colorRight": {
+                "r": 0,
+                "g": 0,
+                "b": 1.5
+              },
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "01308128a87b6b561799359ee5aa213168c3b49f": {
+    "_version": "2.0.0",
+    "_songName": "Portal - Still Alive (Uppermost Remix)",
+    "_songSubName": "",
+    "_songAuthorName": "Uppermost",
+    "_levelAuthorName": "Kryptikos",
+    "_beatsPerMinute": 120,
+    "_songTimeOffset": 0,
+    "_shuffle": 0,
+    "_shufflePeriod": 0.5,
+    "_previewStartTime": 12,
+    "_previewDuration": 10,
+    "_songFilename": "Portal - Still Alive (Uppermost Remix).egg",
+    "_coverImageFilename": "cover.jpg",
+    "_environmentName": "BigMirrorEnvironment",
+    "_customData": {
+      "_contributors": [],
+      "_customEnvironment": "",
+      "_customEnvironmentHash": ""
+    },
+    "_difficultyBeatmapSets": [
+      {
+        "_beatmapCharacteristicName": "Standard",
+        "_difficultyBeatmaps": [
+          {
+            "_difficulty": "Hard",
+            "_difficultyRank": 5,
+            "_beatmapFilename": "Hard.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 40,
+              "_editorOldOffset": 40,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          },
+          {
+            "_difficulty": "Expert",
+            "_difficultyRank": 7,
+            "_beatmapFilename": "Expert.dat",
+            "_noteJumpMovementSpeed": 10,
+            "_noteJumpStartBeatOffset": 0,
+            "_customData": {
+              "_difficultyLabel": "",
+              "_editorOffset": 40,
+              "_editorOldOffset": 40,
+              "_warnings": [],
+              "_information": [],
+              "_suggestions": [],
+              "_requirements": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
