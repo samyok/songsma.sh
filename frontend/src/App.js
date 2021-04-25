@@ -10,7 +10,7 @@ import * as Stats from "stats.js";
 
 const stats = new Stats();
 stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-function App() {
+function App(callback, deps) {
     const Cam = useRef();
     const Cvs = useRef();
 
@@ -22,6 +22,7 @@ function App() {
     // pn model
     const [model, setModel] = useState();
     const [pose, setPose] = useState();
+    const [calibration, setCalibrationValue] = useState(100);
 
     // camera
     const [deviceId, setDeviceId] = useState(localStorage.getItem("CameraId") || {});
@@ -31,6 +32,10 @@ function App() {
     // sabers
     const [blueSaber, setBlueSaber] = useState(null);
     const [redSaber, setRedSaber] = useState(null);
+
+    // velocities
+    const [vx, setVX] = useState(0);
+    const [vy, setVY] = useState(0);
 
     // attach listeners
     useEffect(() => {
@@ -86,27 +91,23 @@ function App() {
                 ctx.lineWidth = 0;
                 // wcData.w wcData.
                 if (blueSaber) {
-                    blueSaber.scene.rotation.z = Math.PI / 2;
-                    // = Math.atan(
-                    //     (pose.leftWrist.x - pose.leftElbow.x) /
-                    //         (pose.leftWrist.y - pose.leftElbow.y),
-                    // );
+                    blueSaber.scene.rotation.z = Math.atan(
+                        (pose.leftWrist.x - pose.leftElbow.x) /
+                            (pose.leftWrist.y - pose.leftElbow.y),
+                    );
                     blueSaber.scene.scale.set(0.1, 0.1, 0.1);
                     blueSaber.scene.position.x =
                         -2.5 + 5 * (Math.min(pose.leftElbow.x, pose.leftWrist.x) / wcData.w);
-                    // blueSaber.scene.position.x = -2.5;
-                    //blueSaber.scene.position.
+                    blueSaber.scene.position.y =
+                        2 + (3 * (pose.leftElbow.y + pose.leftWrist.y)) / (-2 * wcData.h);
                     var distance = Math.sqrt(
                         (pose.leftWrist.x - pose.leftElbow.x) ** 2 +
                             (pose.leftWrist.y - pose.leftElbow.y) ** 2,
                     );
-                    var prev = 0;
-                    var angle = Math.sin(distance / 120);
-                    //setDebug(distance);
-                    setDebug(angle * 2 * Math.PI);
-                    //blueSaber.scene.rotation.x = angle || prev;
-                    blueSaber.scene.rotation.x = Math.PI / 4;
-                    // console.log(distance);
+                    var angle = Math.acos(distance / calibration);
+                    setDebug(distance);
+                    setDebug((angle * 360) / (2 * Math.PI));
+                    blueSaber.scene.rotation.x = -angle || 0;
                 }
             }
             if (pose.rightWrist && pose.rightElbow) {
@@ -333,7 +334,7 @@ function App() {
             x: 0,
             y: 0,
             z: 6,
-            file: "./redsaber.glb",
+            file: "./bluesaber.glb",
             rotZ: Math.PI / 2,
             rotY: 0,
             rotX: 0,
@@ -361,6 +362,14 @@ function App() {
         // composer.render();
         stats.end();
     }, 1000 / 30);
+
+    const resetCalibration = useCallback(() => {
+        if (!pose) return;
+        let distance = Math.sqrt(
+            (pose.leftWrist.x - pose.leftElbow.x) ** 2 + (pose.leftWrist.y - pose.leftElbow.y) ** 2,
+        );
+        setCalibrationValue(distance);
+    }, [pose]);
     return (
         <>
             <div>
@@ -376,6 +385,7 @@ function App() {
                         </option>
                     ))}
                 </select>
+                <button onChange={resetCalibration}>Set Max {calibration}</button>
                 <br />
                 <div
                     style={{
