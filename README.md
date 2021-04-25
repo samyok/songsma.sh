@@ -11,7 +11,7 @@ All of the 3D animations in-game were done with three.js. The UI was built with 
 
 ### Features
 * Using the power of **artificial intelligence**, control your hands on-screen with only your webcam and wrists!
-* Access to a database of over **1500** of your favorite songs on custom user-created beatmaps!
+* Access to a database of over **500** of your favorite songs on custom user-created beatmaps!
 * Play or with your friends in a **head-to-head** battle format, or play to beat your own high score!
 
 ### Inspiration
@@ -34,7 +34,7 @@ SongSmash was a challenging project for all of us, and this was the first time w
 
 * Use artificial intelligence to track one's webcam quickly and reliably.
 * Used three.js successfully, even if none of us had used it before; we were able to make the lighting and special effects better than we had imagined was possible!
-* A fully functioning database of over 1500 songs of varying difficulties
+* A fully functioning database of over 500 songs of varying difficulties
 * 1v1 multiplayer games!
 
 ### What we learned
