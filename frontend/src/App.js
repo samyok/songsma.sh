@@ -8,11 +8,16 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as Stats from "stats.js";
 
+const stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
 function App() {
     const Cam = useRef();
     const Cvs = useRef();
 
     const POSEFPS = 20;
+
+    // debug
+    const [debug, setDebug] = useState("string");
 
     // pn model
     const [model, setModel] = useState();
@@ -22,6 +27,10 @@ function App() {
     const [deviceId, setDeviceId] = useState(localStorage.getItem("CameraId") || {});
     const [devices, setDevices] = useState([]);
     const [wcData, setWCData] = useState(null);
+
+    // sabers
+    const [blueSaber, setBlueSaber] = useState(null);
+    const [redSaber, setRedSaber] = useState(null);
 
     // attach listeners
     useEffect(() => {
@@ -75,6 +84,30 @@ function App() {
                 ctx.lineTo(pose.leftElbow.x, pose.leftElbow.y);
                 ctx.stroke();
                 ctx.lineWidth = 0;
+                // wcData.w wcData.
+                if (blueSaber) {
+                    blueSaber.scene.rotation.z = Math.PI / 2;
+                    // = Math.atan(
+                    //     (pose.leftWrist.x - pose.leftElbow.x) /
+                    //         (pose.leftWrist.y - pose.leftElbow.y),
+                    // );
+                    blueSaber.scene.scale.set(0.1, 0.1, 0.1);
+                    blueSaber.scene.position.x =
+                        -2.5 + 5 * (Math.min(pose.leftElbow.x, pose.leftWrist.x) / wcData.w);
+                    // blueSaber.scene.position.x = -2.5;
+                    //blueSaber.scene.position.
+                    var distance = Math.sqrt(
+                        (pose.leftWrist.x - pose.leftElbow.x) ** 2 +
+                            (pose.leftWrist.y - pose.leftElbow.y) ** 2,
+                    );
+                    var prev = 0;
+                    var angle = Math.sin(distance / 120);
+                    //setDebug(distance);
+                    setDebug(angle * 2 * Math.PI);
+                    //blueSaber.scene.rotation.x = angle || prev;
+                    blueSaber.scene.rotation.x = Math.PI / 4;
+                    // console.log(distance);
+                }
             }
             if (pose.rightWrist && pose.rightElbow) {
                 ctx.strokeStyle = "blue";
@@ -161,23 +194,103 @@ function App() {
      *
      */
 
+    const [cubes, setCubes] = useState([]);
+    const [renderer, setRenderer] = useState(null);
+    const [scene, setScene] = useState();
+    const [camera, setCamera] = useState();
+
+    useEffect(async () => {
+        setScene(new THREE.Scene());
+    }, []);
     useEffect(() => {
-        const scene = new THREE.Scene();
+        if (!scene) return;
         scene.background = null;
 
-        const camera = new THREE.PerspectiveCamera(
-            75,
-            window.innerWidth / window.innerHeight,
-            0.2,
-            1000,
+        setCamera(
+            new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.2, 1000),
         );
 
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        setRenderer(new THREE.WebGLRenderer({ alpha: true }));
+    }, [scene]);
+    const loader = new GLTFLoader();
+
+    function genCube(lineIndex, lineLayer, type, cutDirection) {
+        function postProcessingCube(gltf) {
+            scene.add(gltf.scene);
+            //gltf.scene.position.z = -50;
+            gltf.scene.position.x = lineIndex - 1.5;
+            gltf.scene.position.y = lineLayer - 1;
+            gltf.scene.scale.set(0.42, 0.42, 0.42);
+            gltf.scene.rotation.x += Math.PI;
+            gltf.scene.rotation.z += Math.PI;
+            setCubes(pv => [...pv, gltf.scene]);
+            switch (cutDirection) {
+                case 0:
+                    gltf.scene.rotation.z += Math.PI;
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    gltf.scene.rotation.z += (3 * Math.PI) / 2;
+                    break;
+                case 3:
+                    gltf.scene.rotation.z += Math.PI / 2;
+                    break;
+                case 4:
+                    gltf.scene.rotation.z += (5 * Math.PI) / 4;
+                    break;
+                case 5:
+                    gltf.scene.rotation.z += Math.PI / 4;
+                    break;
+                case 6:
+                    gltf.scene.rotation.z += (7 * Math.PI) / 4;
+                    break;
+                case 7:
+                    gltf.scene.rotation.z += (5 * Math.PI) / 4;
+            }
+        }
+
+        if (type === 0) loader.load("./redbox.glb", postProcessingCube);
+
+        if (type === 1) loader.load("./bluebox.glb", postProcessingCube);
+    }
+
+    function genSaber({ x, y, z, file, rotX, rotY, rotZ, callback }) {
+        loader.load(file, gltf => {
+            scene.add(gltf.scene);
+            gltf.scene.scale.set(0.42, 0.42, 0.42);
+            gltf.scene.position.x = x;
+            gltf.scene.position.y = y;
+            gltf.scene.position.z = z;
+            gltf.scene.rotation.x = rotX;
+            gltf.scene.rotation.y = rotY;
+            gltf.scene.rotation.z = rotZ;
+            if (callback) callback(gltf);
+        });
+    }
+
+    function breakCube(lineIndex, lineLayer) {
+        for (let i = 0; i < cubes.length; i++) {
+            if (
+                Math.round(cubes[i].position.z) > 5 &&
+                Math.round(cubes[i].position.x + 1.5) === lineIndex &&
+                Math.round(cubes[i].position.y + 1) === lineLayer
+            ) {
+                scene.remove(cubes[i]);
+                setCubes(pv => {
+                    pv.splice(i, 1);
+                    return pv;
+                });
+                return;
+            }
+        }
+    }
+
+    useEffect(() => {
+        if (!renderer || !scene) return;
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.outputEncoding = THREE.sRGBEncoding;
         document.body.appendChild(renderer.domElement);
-
-        let cubes = [];
 
         const playingFieldGeo = new THREE.PlaneGeometry(4, 5000, 1);
         const fieldColor = new THREE.MeshBasicMaterial({
@@ -204,119 +317,50 @@ function App() {
         for (let i = 0; i < lights.length; i++) {
             scene.add(lights[i]);
         }
-        //
-        // const rectLight = new THREE.RectAreaLight(0xffff00, 0.5, 10, 5000);
-        // rectLight.position.set(0, -10, 0);
-        // rectLight.lookAt(0, 0, 0);
-        //
-        // scene.add(rectLight);
-        //
-        // const rectLightHelper = new RectAreaLightHelper(rectLight);
-        // rectLight.add(rectLightHelper);
-        //
-        // const lineLight = new THREE.RectAreaLight(0xffff55, 0.2, 2, 5000);
-        // lineLight.position.set(0, 1.5, 0);
-        // lineLight.lookAt(0, 0, 0);
-        // scene.add(lineLight);
-        // const lineLightHelper = new RectAreaLightHelper(lineLight);
-        // lineLight.add(lineLightHelper);
 
         scene.fog = new THREE.Fog("black", 5, 15);
 
-        function genCube(lineIndex, lineLayer, type, cutDirection) {
-            function postProcessingCube(gltf) {
-                scene.add(gltf.scene);
-                //gltf.scene.position.z = -50;
-                gltf.scene.position.x = lineIndex - 1.5;
-                gltf.scene.position.y = lineLayer - 1;
-                gltf.scene.scale.set(0.42, 0.42, 0.42);
-                gltf.scene.rotation.x += Math.PI;
-                gltf.scene.rotation.z += Math.PI;
-                cubes.push(gltf.scene);
-                switch (cutDirection) {
-                    case 0:
-                        gltf.scene.rotation.z += Math.PI;
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        gltf.scene.rotation.z += (3 * Math.PI) / 2;
-                        break;
-                    case 3:
-                        gltf.scene.rotation.z += Math.PI / 2;
-                        break;
-                    case 4:
-                        gltf.scene.rotation.z += (5 * Math.PI) / 4;
-                        break;
-                    case 5:
-                        gltf.scene.rotation.z += Math.PI / 4;
-                        break;
-                    case 6:
-                        gltf.scene.rotation.z += (7 * Math.PI) / 4;
-                        break;
-                    case 7:
-                        gltf.scene.rotation.z += (5 * Math.PI) / 4;
-                }
-            }
-
-            if (type === 0) {
-                const loader = new GLTFLoader();
-                loader.load("./redbox.glb", postProcessingCube);
-            }
-            if (type === 1) {
-                const loader = new GLTFLoader();
-                loader.load("./bluebox.glb", postProcessingCube);
-            }
-        }
-
-        function breakCube(lineIndex, lineLayer) {
-            let temp = cubes.length;
-            for (let i = 0; i < temp; i++) {
-                if (
-                    Math.round(cubes[i].position.z) > 5 &&
-                    Math.round(cubes[i].position.x + 1.5) === lineIndex &&
-                    Math.round(cubes[i].position.y + 1) === lineLayer
-                ) {
-                    scene.remove(cubes[i]);
-                    cubes.splice(i, 1);
-                    return;
-                }
-            }
-        }
-
         // const composer = new EffectComposer( renderer );
-        var stats = new Stats();
-        stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+
         document.body.appendChild(stats.dom);
         // this func is called whenever the resources are available for it
-        const animate = function () {
-            stats.begin();
 
-            for (let i = 0; i < cubes.length; i++) {
-                cubes[i].position.z += 0.08;
-                if (cubes[i].position.z > 7) {
-                    scene.remove(cubes[i]);
-                    cubes.splice(i, 1);
-                }
-            }
-
-            renderer.render(scene, camera);
-            // const renderPass = new RenderPass( scene, camera );
-            // composer.addPass( renderPass );
-            // composer.render();
-            stats.end();
-            requestAnimationFrame(animate);
-        };
-
-        // genCube(0, 0, 0, 4);
-        // genCube(1, 1, 1, 5);
-        // genCube(2, 2, 0, 6);
-        // genCube(3, 2, 1, 7);
-        // setTimeout(() => breakCube(3, 2), 3000);
+        genCube(0, 0, 0, 4);
+        genCube(1, 1, 1, 5);
+        genCube(2, 2, 0, 6);
+        genCube(3, 2, 1, 7);
+        genSaber({
+            x: 0,
+            y: 0,
+            z: 6,
+            file: "./redsaber.glb",
+            rotZ: Math.PI / 2,
+            rotY: 0,
+            rotX: 0,
+            callback: gltf => setBlueSaber(gltf),
+        });
+        setTimeout(() => breakCube(3, 2), 2000);
 
         camera.position.z = 10;
-        requestAnimationFrame(animate);
-    }, []);
+    }, [renderer]);
+
+    useInterval(() => {
+        stats.begin();
+        if (!renderer) return;
+        for (let i = 0; i < cubes.length; i++) {
+            cubes[i].position.z += 0.04;
+            if (cubes[i].position.z > 7) {
+                scene.remove(cubes[i]);
+                cubes.splice(i, 1);
+            }
+        }
+
+        renderer.render(scene, camera);
+        // const renderPass = new RenderPass( scene, camera );
+        // composer.addPass( renderPass );
+        // composer.render();
+        stats.end();
+    }, 1000 / 30);
     return (
         <>
             <div>
@@ -351,6 +395,17 @@ function App() {
                         onUserMedia={onWCMedia}
                         style={{ position: "absolute", top: 0, left: 0 }}
                     />
+                    <pre
+                        style={{
+                            position: "fixed",
+                            bottom: 0,
+                            left: 0,
+                            backgroundColor: "black",
+                            color: "white",
+                            fontSize: 20,
+                        }}>
+                        {debug}
+                    </pre>
                     <canvas
                         ref={Cvs}
                         style={{ position: "absolute", top: 0, left: 0, zIndex: 999999 }}
